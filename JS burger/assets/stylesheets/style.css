@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.wrapper{
+overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
 /* SP style */
 }
@@ -9,24 +13,41 @@
 
 .head_menu {
  width: 100%;
- height: 70px;
  display: flex;
+ justify-content: space-around;
+ margin: auto;
  list-style: none;
-
+ font-family: 'Anton';
+ font-size: 20px;
+ color: aliceblue;
 }
 
-.sns_icon {
-    width: 100%;
-    height: 70px;
+.head_menu_content{
+    margin-right: 30px;
+}
+
+.sns {
     display: flex; 
+    margin: auto;
     list-style: none;
+    background-color: black;
 }
+
+.sns_icon{margin-right: 5px;}
 
 .pc_menu {
     width: 100%;
-    height: 70px;
+    height: 110px;
     display: flex; 
+    position:absolute;
+    margin-top: 0%;
+    box-sizing: border-box;
+    justify-content: space-around;
     background-color: black;
+}
+
+.withburger h1{
+    position: absolute;
 }
 
 }
