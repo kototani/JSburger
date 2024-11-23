@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 768px) {
+/* SP style */
+}
+
+@media screen and (min-width: 769px) {
+/* PC style */
+
+.head_menu {
+ width: 100%;
+ height: 70px;
+ display: flex;
+ list-style: none;
+
+}
+
+.sns_icon {
+    width: 100%;
+    height: 70px;
+    display: flex; 
+    list-style: none;
+}
+
+.pc_menu {
+    width: 100%;
+    height: 70px;
+    display: flex; 
+    background-color: black;
+}
+
+}
+
