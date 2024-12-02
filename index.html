@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/stylesheets/reset.css"/>
     <link rel="stylesheet" href="assets/stylesheets/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
     <title>responsive-site</title>
   </head>
   <body>
@@ -16,30 +18,43 @@
   <div class="wrapper">
 
     <header class="menu">
+
     <!--SPヘッダーメニュー -->
     <nav class="sp">
+
+      <button class="sp_menu" type="button" id="js-buttonHamburger" aria-expanded="false">
+        <span class="hamburger-line">
+          <span class="visuallyHidden"></span>
+        </span>
+      </button>
+
+      <div class="overlay" id="js-overlay"></div>
       
-      <div id="hamburger_sp">
-      <div class="sp_menu">
-        <span></span>
-        <span></span>
-      </div>
+      <div class="modal-container" id="modal-1" aria-hidden="true">
+        <div tabindex="-1" data-micromodal-close>
+          <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div id="modal-1-content">
+              <ul class="hamburger_menu" id="sp-hamburger">
+                <li class="head_menu_content"><a class="menu-link">HOME</a></li>
+                <li class="head_menu_content"><a class="menu-link">OUR MENU</a></li>
+                <li class="head_menu_content"><a class="menu-link">ONLINE STORE</a></li>
+                <li class="head_menu_content"><a class="menu-link">NEWS</a></li>
+                <li class="head_menu_content"><a class="menu-link">SHINJUKU</a></li>
+                <li class="head_menu_content"><a class="menu-link">SHOPLIST</a></li>
+                <li class="head_menu_content"><a class="menu-link">RECRUIT</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <ul class="hamburger_menu">
-        <li class="head_menu_content"><p>HOME</p></li>
-        <li class="head_menu_content"><p>OUR MENU</p></li>
-        <li class="head_menu_content"><p>ONLINESTORE</p></li>
-        <li class="head_menu_content"><p>NEWS</p></li>
-        <li class="head_menu_content"><p>SHINJUKU</p></li>
-        <li class="head_menu_content"><p>SHOPLIST</p></li>
-        <li class="head_menu_content"><p>RECRUIT</p></li>
-      </ul>
+      <script src ="assets/js/sp_menu.js"></script>
     </nav>
     <!--SPヘッダーメニュー -->
+
     <!--PCヘッダーメニュー -->
     <nav class="pc">
-      <div class="pc_menu">
+      <div class="pc_menu" id="pc-headmenu">
         <ul class="head_menu">
           <li class="head_menu_content"><p>HOME</p></li>
           <li class="head_menu_content"><p>OUR MENU</p></li>
@@ -56,6 +71,8 @@
       </div>
     </nav>
       <!--PCヘッダーメニュー -->
+
+      <script src ="assets/js/menu_scroll.js"></script>
     </header>
 
 
