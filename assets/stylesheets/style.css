@@ -30,34 +30,133 @@ width: 100%;
 
 .pc{display: none;}
 
+/* アクセシビリティ対策 */
+.visuallyHidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  /* ハンバーガーボタンのスタイル */
+  .hamburger {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: 32px;
+    outline: none;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    transition: transform .6s, width .6s;
+    width: 40px;
+    z-index: 200; /* メニューが開いてもハンバーガーボタンが上に表示されるように */
+  }
+  /* ハンバーガーメニュー三本線 */
+  .hamburger-line {
+    background-color: #000;
+    height: 2px;
+    left: 0;
+    margin-left: 90%;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: inherit;
+    width: 30px;
+  }
+  .hamburger-line::before,
+  .hamburger-line::after {
+    background-color: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: inherit;
+    width: 100%;
+  }
+  .hamburger-line::before {
+    top: 10px;
+  }
+  .hamburger-line::after {
+    top: 20px;
+  }
+  /* ハンバーガーメニュー三本線オープン時 */
+  .hamburger[aria-expanded="true"] .hamburger-line {
+    transform: translateY(15px) rotate(-45deg);
+  }
+  .hamburger[aria-expanded="true"] .hamburger-line::before {
+    transform: translateY(-12px) translateX(20px) rotate(45deg);
+    width: 0;
+  }
+  .hamburger[aria-expanded="true"] .hamburger-line::after {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  /* オーバーレイのスタイル */
+  .overlay {
+    background-color: #333;
+    cursor: pointer;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity .6s, visibility .6s;
+    visibility: hidden;
+    width: 100vw;
+    z-index: 10;
+  }
+  .overlay.active {
+    opacity: .8;
+    visibility: visible;
+  }
+  /* メニューのスタイル */
+  .modal-container {
+    height: 100%;
+    position: fixed;
+    top: -100%;
+    margin-left: 30%;
+    transition: top .6s ease-in-out;
+    width: 100%;
+    z-index: 20; /* オーバーレイよりも上に来るようにするため */
+  }
+  .modal-container[aria-hidden="false"] {
+    overflow-y: scroll;
+    top: 0;
+    transition: top .6s ease-in-out;
+  }
+
+
 .sp_menu{
     width: 100%;
     height: 50px;
-    position: absolute;
+    position: fixed;
     display: block;
     background-color: #FCC72C;
-    z-index: 8;
+    z-index: 30;
     padding: 10px;
+    top: 0;
+    transition: top 0.3s ease-in-out;
 }
-
-.sp_menu span{
-    transition: all .3s;
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    margin-left: auto;
-    background-color: #000;
-}
-
-.sp_menu span:nth-of-type(1){top:12px;}
-.sp_menu span:nth-of-type(2){top:24px;}
 
 .hamburger_menu{
     width: 100%;
     height: 100vh;
-    display: none;
+    text-align: center;
     background-color: #888;
     z-index: 99;
+    padding-top: 100px;
+}
+
+.head_menu_content{
+    font-size: 20px;
 }
 
 .head_visual{
@@ -183,6 +282,7 @@ width: 100%;
     height: 100%;
     display: flex;
     margin-top: 30px;
+    transition: 1s all;
 }
 
 .news_item_link{
@@ -258,6 +358,7 @@ width: 100%;
  font-family: 'Anton';
  font-size: 20px;
  color: aliceblue;
+ top: 0;
 }
 
 .head_menu_content{
@@ -396,7 +497,6 @@ width: 100%;
     height: 20px;
     padding: 15px 20px;
     border-radius: 10px;
-    background-color: #FCC72C;
     font-size: 16px;
     color: #fff;
     text-align: center;
