@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/stylesheets/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
     <title>responsive-site</title>
   </head>
@@ -17,16 +18,16 @@
 
   <div class="wrapper">
 
-    <header class="menu">
+    <div class="menu">
 
     <!--SPヘッダーメニュー -->
     <nav class="sp">
 
-      <button class="sp_menu" type="button" id="js-buttonHamburger" aria-expanded="false">
+      <header class="sp_menu" type="button" id="js-buttonHamburger" aria-expanded="false">
         <span class="hamburger-line">
           <span class="visuallyHidden"></span>
         </span>
-      </button>
+      </header>
 
       <div class="overlay" id="js-overlay"></div>
       
@@ -54,7 +55,7 @@
 
     <!--PCヘッダーメニュー -->
     <nav class="pc">
-      <div class="pc_menu" id="pc-headmenu">
+      <header class="pc_menu" id="pc-headmenu">
         <ul class="head_menu">
           <li class="head_menu_content"><p>HOME</p></li>
           <li class="head_menu_content"><p>OUR MENU</p></li>
@@ -68,12 +69,12 @@
           <li class="sns_icon"><img src="assets/images/icons8-line-50.png"width="30px"height="30px"></li>
           <li class="sns_icon"><img src="assets/images/icons8-line-50.png"width="30px"height="30px"></li>
         </ul>
-      </div>
+      </header>
     </nav>
       <!--PCヘッダーメニュー -->
 
-      <script src ="assets/js/menu_scroll.js"></script>
-    </header>
+      <script src="assets/js/menu_scroll.js"></script>
+  </div>
 
 
 <div class="main">
