@@ -36,7 +36,7 @@ width: 100%;
     height: 50px;
     position: fixed;
     display: block;
-    background-color: #FCC72C;
+    background-color: #333;
     z-index: 100;
     padding: 10px;
     transition: top 0.3s ease-in-out;
@@ -50,7 +50,6 @@ width: 100%;
     height: 1px;
     margin: -1px;
     overflow: hidden;
-    padding: 0;
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -73,7 +72,7 @@ width: 100%;
   }
   /* ハンバーガーメニュー三本線 */
   .hamburger-line {
-    background-color: #000;
+    background-color: #FFF;
     height: 2px;
     left: 0;
     margin-left: 90%;
@@ -86,7 +85,7 @@ width: 100%;
   }
   .hamburger-line::before,
   .hamburger-line::after {
-    background-color: #000;
+    background-color: #FFF;
     content: "";
     display: block;
     height: 100%;
@@ -130,6 +129,7 @@ width: 100%;
     visibility: visible;
   }
   /* メニューのスタイル */
+
   .modal-container {
     height: 100%;
     position: fixed;
@@ -137,8 +137,9 @@ width: 100%;
     margin-left: 30%;
     transition: top .6s ease-in-out;
     width: 100%;
-    z-index: 20; /* オーバーレイよりも上に来るようにするため */
+    z-index: 20; /* オーバーレイよりも上に */
   }
+
   .modal-container[aria-hidden="false"] {
     overflow-y: scroll;
     top: 0;
@@ -148,15 +149,21 @@ width: 100%;
 .hamburger_menu{
     width: 100%;
     height: 100vh;
-    text-align: center;
-    background-color: #888;
+    background-color:#000;
     z-index: 99;
     padding-top: 100px;
+    display: flex;
+    flex-flow: column;
 }
 
 .head_menu_content{
     font-size: 20px;
+    color: #fff;
+    margin-left: 40px;
+    margin-top: 3%;
 }
+
+  /* メニューのスタイル */
 
 .head_visual{
     width: 100%;
@@ -181,7 +188,7 @@ width: 100%;
 
 .concept{
     padding: 10px;
-    background-color:black;
+    background-color:#333;
 }
 
 .concept_text{
@@ -194,6 +201,11 @@ width: 100%;
 
 /* サービス紹介 */
 
+.menu_contents
+{   width: 100%;
+    box-sizing: border-box;
+}
+
 .menu_contents_image1 img,
 .menu_contents_image2 img,
 .menu_contents_image3 img,
@@ -201,11 +213,6 @@ width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    opacity: 0;
-  visibility: hidden;
-  transition: all 1s;
-  transform: translateY(150px);
 }
 
 .menu_contents_text{
@@ -219,11 +226,6 @@ width: 100%;
     font-weight: 900;
     font-size: 25px;
     margin-top: 20px;
-
-    opacity: 0;
-  visibility: hidden;
-  transition: all 1s;
-  transform: translateY(150px);
 }
 
 .menu_contents_text h1{
@@ -231,11 +233,6 @@ width: 100%;
     font-weight: 900;
     font-size: 60px;
     margin-top: 20px;
-
-    opacity: 0;
-  visibility: hidden;
-  transition: all 1s;
-  transform: translateY(150px);
 }
 
 .menu_contents_text p{
@@ -244,11 +241,6 @@ width: 100%;
     margin-top: 40px;
     margin-bottom: 60px;
     line-height: 30px;
-
-    opacity: 0;
-  visibility: hidden;
-  transition: all 1s;
-  transform: translateY(150px);
 }
 
 .menu_contents_text a{
@@ -261,34 +253,57 @@ width: 100%;
     color: #fff;
     text-align: center;
     margin-bottom: 60px;
-
-    opacity: 0;
-  visibility: hidden;
-  transition: all 1s;
-  transform: translateY(150px);
 }
 
-.is-active {
-    /*要素を表示させる*/
+
+/* フェードインCSS-SP*/
+
+.menu_contents_image{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 500ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_h1{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 800ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_h2{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 800ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_text{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 900ms; /* フェードインにかかる時間を指定 */
+}
+
+.effect-scroll {
     opacity: 1;
-    visibility: visible;
-    /*元の位置に戻す*/
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
+
+
 
 /* 地域活動　ニュース */
 
 .news{
-    background-color: #888;
+    background-color: #333;
     text-align: center;
     align-items: center;
     padding-top: 30px;
 }
 
 .news h1{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 20px;
+    color: #FFF;
 }
 
 .slide{
@@ -296,7 +311,6 @@ width: 100%;
     height: 500px;
     position: relative;
     overflow: hidden;
-    padding-left: 25px;
 }
 
   .slide1 { /* スライドさせるために必要なクラス */
@@ -320,7 +334,6 @@ width: 100%;
 .news_item_link{
     width: 100%;
     height: 100%;
-    margin-right:30px;
     box-sizing: border-box;
     flex-direction: column;
     background-color: #fff;
@@ -347,7 +360,7 @@ width: 100%;
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 10%;
+    left: 15%;
     bottom: 67%;
     z-index: 10;
     cursor: pointer;
@@ -361,7 +374,7 @@ width: 100%;
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 87%;
+    right: 15%;
     bottom: 67%;
     z-index: 10;
     cursor: pointer;
@@ -400,7 +413,7 @@ width: 100%;
     display: flex; 
     margin: auto;
     list-style: none;
-    background-color: black;
+    background-color: #333;
 }
 
 .sns_icon{margin-right: 5px;}
@@ -413,7 +426,7 @@ width: 100%;
     z-index: 100;
     box-sizing: border-box;
     justify-content: space-around;
-    background-color: black;
+    background-color: #333;
     transition: top 0.3s ease-in-out;
 }
 
@@ -443,7 +456,7 @@ width: 100%;
 .concept{
     height: 450px;
     padding: 80px;
-    background-color:black;
+    background-color:#333;
 }
 
 .concept_text{
@@ -460,10 +473,7 @@ width: 100%;
     width: 100%;
 }
 
-.menu_contents--1,
-.menu_contents--2,
-.menu_contents--3,
-.menu_contents--4
+.menu_contents
 {   width: 100%;
     height: 600px;
     display: flex;
@@ -475,7 +485,6 @@ width: 100%;
 {   width: 50%;
     height: 600px;
     object-fit: cover;
-    opacity: 0;
 }
 
 .menu_contents_image2,
@@ -484,7 +493,6 @@ width: 100%;
     height: 600px;
     object-fit: cover;
     order: 3;
-    opacity: 0;
 }
 
 .menu_contents_image1 img,
@@ -509,7 +517,6 @@ width: 100%;
     font-weight: 900;
     font-size: 25px;
     margin-top: 20px;
-    opacity: 0;
 }
 
 .menu_contents_text h1{
@@ -517,7 +524,6 @@ width: 100%;
     font-weight: 900;
     font-size: 60px;
     margin-top: 20px;
-    opacity: 0;
 }
 
 .menu_contents_text p{
@@ -526,7 +532,6 @@ width: 100%;
     margin-top: 40px;
     margin-bottom: 60px;
     line-height: 30px;
-    opacity: 0;
 }
 
 .menu_contents_text a{
@@ -537,23 +542,55 @@ width: 100%;
     font-size: 16px;
     color: #fff;
     text-align: center;
-    opacity: 0;
 }
+
+/* フェードインCSS */
+
+.menu_contents_image{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 500ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_h1{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 800ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_h2{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 800ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_text{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 900ms; /* フェードインにかかる時間を指定 */
+}
+
+.effect-scroll {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 
 /* 地域活動　ニュース */
 
 .news{
-    background-color: #888;
+    background-color: #333;
     text-align: center;
     align-items: center;
     padding: 10%;
 }
 
 
-.shop_news h1{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    color: #fff;
+.news h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 20px;
+    color: #FFF;
 }
 
 .news_contents{

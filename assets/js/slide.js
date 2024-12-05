@@ -27,18 +27,14 @@ function nextClick() {
 function prevClick() {
   slide.classList.remove(`slide${count % totalSlides + 1}`);
   count--;
-  if (count < 0) count = totalSlides - 1;
+  if (count < 0) count = totalSlides - 2;
   slide.classList.add(`slide${count % totalSlides + 1}`);
   updateListBackground();
 }
 
 next.addEventListener('click', () => {
   nextClick();
-  resetAutoPlayInterval();
 });
 prev.addEventListener('click', () => {
   prevClick();
-  resetAutoPlayInterval();
 });
-
-startAutoPlay();
