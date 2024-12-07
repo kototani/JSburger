@@ -4,9 +4,9 @@ $(function(){
 	$(window).on('load scroll', function() {
 		var scrollPos = $(this).scrollTop();
 		if ( scrollPos > startPos && scrollPos > headerHeight ) {
-			$('header').css('top', '-' + headerHeight + 'px');
+			$('header').fadeOut();
 		} else {
-			$('header').css('top', '0');
+			$('header').fadeIn();
 		}
 		startPos = scrollPos;
 	});
