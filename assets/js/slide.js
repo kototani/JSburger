@@ -9,7 +9,6 @@ const indicator = document.getElementById('indicator');
 const lists = document.querySelectorAll('.list');
 const totalSlides = lists.length;
 let count = 0;
-let autoPlayInterval;
 
 function updateListBackground() {
   for (let i = 0; i < lists.length; i++) {
@@ -18,23 +17,29 @@ function updateListBackground() {
 }
 
 function nextClick() {
-  slide.classList.remove(`slide${count % totalSlides + 1}`);
-  count++;
-  slide.classList.add(`slide${count % totalSlides + 1}`);
-  updateListBackground();
+  // もし count が totalSlides - 1 より小さい場合のみインクリメント
+  if (count < totalSlides - 1) {
+    slide.classList.remove(`slide${count + 1}`);
+    count++;
+    slide.classList.add(`slide${count + 1}`);
+    updateListBackground();
+  }
 }
 
 function prevClick() {
-  slide.classList.remove(`slide${count % totalSlides + 1}`);
-  count--;
-  if (count < 0) count = totalSlides - 2;
-  slide.classList.add(`slide${count % totalSlides + 1}`);
-  updateListBackground();
+  // もし count が 0 より大きい場合のみデクリメント
+  if (count > 0) {
+    slide.classList.remove(`slide${count + 1}`);
+    count--;
+    slide.classList.add(`slide${count + 1}`);
+    updateListBackground();
+  }
 }
 
 next.addEventListener('click', () => {
   nextClick();
 });
+
 prev.addEventListener('click', () => {
   prevClick();
 });
