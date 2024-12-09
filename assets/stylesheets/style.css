@@ -219,7 +219,10 @@ width: 100%;
 
 /* サービス紹介 */
 
-.menu_contents
+.menu_contents_1,
+.menu_contents_2,
+.menu_contents_3,
+.menu_contents_4
 {   width: 100%;
     box-sizing: border-box;
 }
@@ -266,7 +269,7 @@ width: 100%;
     height: 20px;
     padding: 15px 20px;
     border-radius: 10px;
-    background-color: #FCC72C;
+    background-color:rgb(255, 148, 66);
     font-family:Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #fff;
@@ -301,10 +304,17 @@ width: 100%;
     transition: all 900ms; /* フェードインにかかる時間を指定 */
 }
 
+.view_button{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 900ms; /* フェードインにかかる時間を指定 */
+}
+
+
 .effect-scroll {
     opacity: 1;
     transform: translate(0, 0);
-  }
+}
 
 
 
@@ -495,12 +505,12 @@ width: 100%;
 
 @keyframes  catch_copy{
     0% {
-      transform: translateY(-400px);
+    transform: translateY(-400px);
     }
     100% {
-      transform: translateY(0);
+    transform: translateY(0);
     }
-  }
+    }
 
 .concept{
     height: 40%;
@@ -522,15 +532,28 @@ width: 100%;
     width: 100%;
 }
 
-.menu_contents
+.menu_contents_1,
+.menu_contents_2,
+.menu_contents_3,
+.menu_contents_4
 {   width: 100%;
     height: 600px;
     display: flex;
     box-sizing: border-box;
 }
 
+.menu_contents_2
+{background-color: #333;
+color: #FFF;
+}
+
+.menu_contents_4{
+background-color:#dbdbdb;
+color: #000;
+}
+
 .menu_contents_image1,
-.menu_contents_image3 
+.menu_contents_image3
 {   width: 50%;
     height: 600px;
     object-fit: cover;
@@ -588,18 +611,15 @@ width: 100%;
     height: 20px;
     padding: 15px 20px;
     border-radius: 10px;
+    background-color: rgb(255, 148, 66);
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #fff;
     text-align: center;
+    margin-bottom: 60px;
 }
 
-/* フェードインCSS */
-
-.menu_contents_image{
-    opacity: 0;
-    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
-    transition: all 500ms; /* フェードインにかかる時間を指定 */
-}
+/* フェードインCSS  PC */
 
 .contents_h1{
     opacity: 0;
@@ -614,6 +634,18 @@ width: 100%;
 }
 
 .contents_text{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 900ms; /* フェードインにかかる時間を指定 */
+}
+
+.contents_text{
+    opacity: 0;
+    transform: translate(0, 100px); /* フェードインで動く高さを指定 */
+    transition: all 900ms; /* フェードインにかかる時間を指定 */
+}
+
+.view_button{
     opacity: 0;
     transform: translate(0, 100px); /* フェードインで動く高さを指定 */
     transition: all 900ms; /* フェードインにかかる時間を指定 */
