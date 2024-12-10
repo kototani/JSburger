@@ -75,7 +75,7 @@ slide.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
   const distance  = startX - endX;
 
-  if (Math.ads(distance) > 50) {
+  if (Math.abs(distance) > 50) {
     if (distance > 0){
       nextClick();
   }else{
