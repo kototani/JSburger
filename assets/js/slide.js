@@ -10,9 +10,26 @@ const lists = document.querySelectorAll('.list');
 const totalSlides = lists.length;
 let count = 0;
 
+let startX = 0; // フリック開始時の位置
+
 function updateListBackground() {
   for (let i = 0; i < lists.length; i++) {
     lists[i].style.backgroundColor = i === count % totalSlides ? '#000' : '#fff';
+  }
+}
+
+function updateArrows() {
+  // 最初のスライドの場合は prev を非表示にし、最後のスライドの場合は next を非表示にする
+  if (count === 0) {
+    prev.style.display = 'none';
+  } else {
+    prev.style.display = 'block';
+  }
+
+  if (count === totalSlides - 1) {
+    next.style.display = 'none';
+  } else {
+    next.style.display = 'block';
   }
 }
 
@@ -23,6 +40,7 @@ function nextClick() {
     count++;
     slide.classList.add(`slide${count + 1}`);
     updateListBackground();
+    updateArrows();
   }
 }
 
@@ -33,6 +51,7 @@ function prevClick() {
     count--;
     slide.classList.add(`slide${count + 1}`);
     updateListBackground();
+    updateArrows();
   }
 }
 
@@ -43,3 +62,26 @@ next.addEventListener('click', () => {
 prev.addEventListener('click', () => {
   prevClick();
 });
+
+updateArrows();
+
+
+
+slide.addEventListener('touchstart',(e) => {
+  startX = e.touches[0].clientX;
+},false);
+
+slide.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  const distance  = startX - endX;
+
+  if (Math.ads(distance) > 50) {
+    if (distance > 0){
+      nextClick();
+  }else{
+    prevClick();
+  }
+}
+},false);
+
+
