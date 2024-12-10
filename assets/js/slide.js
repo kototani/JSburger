@@ -66,6 +66,7 @@ prev.addEventListener('click', () => {
 updateArrows();
 
 
+// iphoneフリック入力
 
 slide.addEventListener('touchstart',(e) => {
   startX = e.touches[0].clientX;
@@ -75,7 +76,7 @@ slide.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
   const distance  = startX - endX;
 
-  if (Math.abs(distance) > 50) {
+  if (Math.abs(distance) > 20) {
     if (distance > 0){
       nextClick();
   }else{
