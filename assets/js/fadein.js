@@ -9,7 +9,7 @@ $(function () {
         $(this).addClass("effect-scroll");
       }
     });
-    $(".contents_h2").each(function () {
+    $(".contents_h3").each(function () {
       var elemPos = $(this).offset().top; /* 要素の位置を取得 */
       var scroll = $(window).scrollTop(); /* スクロール位置を取得 */
       var windowHeight = $(window).height(); /* 画面幅を取得（画面の下側に入ったときに動作させるため） */
@@ -18,7 +18,7 @@ $(function () {
         $(this).addClass("effect-scroll");
       }
     });
-    $(".contents_h1").each(function () {
+    $(".contents_h2").each(function () {
       var elemPos = $(this).offset().top; /* 要素の位置を取得 */
       var scroll = $(window).scrollTop(); /* スクロール位置を取得 */
       var windowHeight = $(window).height(); /* 画面幅を取得（画面の下側に入ったときに動作させるため） */

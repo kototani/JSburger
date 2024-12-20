@@ -136,7 +136,7 @@ width: 100%;
   .modal-container {
     height: 100%;
     position: fixed;
-    top: -100%;
+    top: -200%;
     margin-left: 30%;
     transition: top .6s ease-in-out;
     width: 100%;
@@ -172,7 +172,7 @@ width: 100%;
 
 .head_visual{
     width: 100%;
-    height: 750px;
+    height: 100vh;
     position: relative;
     background-image: url("../images/AdobeStock_123555365.jpeg");
     object-fit: cover;
@@ -185,7 +185,7 @@ width: 100%;
 
 .catch_copy{
  font-family: 'Anton';
- font-size: 300%;
+ font-size: 100px;
  color: aliceblue;
  position: absolute;
  text-align: center;
@@ -378,6 +378,12 @@ width: 100%;
     border: solid 1px #888;
 }
 
+.news_item_text{
+    padding: 15px;
+    text-align: left;
+    color: #000;
+}
+
 .news_item_image{
     width: 100%;
     height: 50%;
@@ -399,7 +405,7 @@ width: 100%;
 
 .news_item_text h3{
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     color: black;
 }
 
